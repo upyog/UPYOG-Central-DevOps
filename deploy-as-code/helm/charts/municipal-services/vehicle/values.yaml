@@ -1,3 +1,4 @@
+namespace : sanitation
 # Common Labels
 labels:
   app: "vehicle"
@@ -27,7 +28,7 @@ healthChecks:
   readinessProbePath: "/vehicle/health"
 appType: "java-spring"
 tracing-enabled: true
-heap: "-Xmx256m -Xms256m"
+heap: "-Xmx384m -Xms256m"
 java-args: "-Dspring.profiles.active=monitoring"
 egov.idgen.vehicle.trip.applicationNum.format: "[CITY.CODE]-VT-[cy:yyyy-MM-dd]-[SEQ_EGOV_VEHICLETRIP]"
 
@@ -58,11 +59,6 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: egov-workflow-v2
-  - name: EGOV_FSM_HOST
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: fsm
   - name: WORKFLOW_TRANSITION_PATH
     value: "egov-workflow-v2/egov-wf/process/_transition"
   - name: EGOV_IDEN_VEHICLE_TRIP_APPLICATIONNUM_FORMAT

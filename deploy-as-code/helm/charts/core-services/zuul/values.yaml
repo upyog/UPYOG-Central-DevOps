@@ -10,7 +10,7 @@ namespace: egov
 initContainers: 
   extraInitContainers: |
     - name: "zuul-kubernetes-discovery"
-      image: "{{ .Values.global.containerRegistry }}/zuul-kubernetes-discovery:vNA-452b00d9de-3"      
+      image: "{{ .Values.global.containerRegistry }}/zuul-kubernetes-discovery:2-master-91c9795"      
       env: 
       - name: "OUTPUT_FILE_PATH"
         value: "/etc/zuul/routes.properties" 
@@ -39,7 +39,8 @@ healthChecks:
 custom-filter-property: "false"
 posthook-config: ""
 prehook-config: ""
-heap: "-Xmx192m -Xms192m"
+heap: "-Xmx640m -Xms512m"
+memory_limits: 768Mi
 appType: "java-spring"
 tracing-enabled: true
 server-tomcat-max-threads: "350"
@@ -103,7 +104,7 @@ env: |
   - name: ZUUL_HOST_CONNECT_TIMEOUT_MILLIS
     value: "20000"
   - name: ZUUL_HOST_SOCKET_TIMEOUT_MILLIS
-    value: "150000"
+    value: "60000"
   {{- if index .Values "tracing-enabled" }}
   - name: TRACER_OPENTRACING_ENABLED
     value: "true"
@@ -136,13 +137,4 @@ env: |
       configMapKeyRef:
         name: egov-service-host
         key: home-isolation-chatbot
-  {{- end }}
-  - name: SPRING_REDIS_HOST     
-  {{- if index .Values "cluster-configs" "configmaps" "egov-service-host" "data" "redis-host" }}   
-    valueFrom:
-      configMapKeyRef:
-        name: egov-service-host
-        key: redis-host   
-  {{- else }}
-    value: "redis.backbone"
   {{- end }}
