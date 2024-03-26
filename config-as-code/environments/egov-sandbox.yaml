@@ -1,6 +1,7 @@
 global:
   domain: egov-sandbox.niua.org
-  containerRegistry: egovsb
+  #containerRegistry: egovsb
+  containerRegistry: upyogio
   setup: fullsetup
   tracing-enabled: true
 
