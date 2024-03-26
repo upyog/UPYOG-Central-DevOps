@@ -1,6 +1,7 @@
 global:
   domain: egov-sandbox.niua.org
-  containerRegistry: egovsb
+  #containerRegistry: egovsb
+  containerRegistry: upyogio
   setup: fullsetup
   tracing-enabled: true
 
@@ -313,9 +314,9 @@ egov-localization:
   memory_limits: "768Mi"
   
 egov-mdms-service:
-  replicas: 1
-  heap:  "-Xmx512m -Xms512m"
-  memory_limits: "768Mi"
+  replicas: 2
+  heap:  "-Xmx1000m -Xms1000m -Xmn800m"
+  memory_limits: "1250Mi"
   mdms-path: "/work-dir/upyog-mdms-data/data"
   initContainers:
     gitSync:
