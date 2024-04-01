@@ -826,7 +826,7 @@ zookeeper-v2:
 elasticsearch-data-v1:
   replicas: 3
   image:
-    tag: 7.17.15
+    tag: 8.11.3
   persistence:
     enabled: true
     aws:
@@ -871,7 +871,7 @@ elasticsearch-data-infra-v1:
 elasticsearch-master-v1:
   replicas: 3
   image:
-    tag: 7.17.15
+    tag: 8.11.3
   persistence:
     enabled: true
     aws:
@@ -912,7 +912,7 @@ elasticsearch-master-infra-v1:
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 kibana-v1:
   image:
-    tag: 7.17.15
+    tag: 8.11.3
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 es-curator-infra:
   namespace: es-cluster
@@ -1003,8 +1003,8 @@ oauth2-proxy:
   config:
     configFile: |-
       email_domains = [ "*" ]
-      github_org = "upyog"
-      github_team = "nugp-team,devops,upyog-kibana-sandbox"
+      github_org = "egovernments"
+      github_team = "upyog"
       upstreams = [ "file:///dev/null" ]
 grafana:
   initContainers:
