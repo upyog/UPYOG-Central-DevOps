@@ -1043,7 +1043,7 @@ sw-services:
   is-external-workflow-enabled: "true" 
   
 egov-edcr:
-heap: "-Xmx756m -Xms386m"
+  heap: "-Xmx756m -Xms386m"
   ingress:
     enabled: true
     zuul: true
