@@ -220,7 +220,7 @@ egov-notification-sms:
   
 egov-user:
   replicas: 2
-  heap: "-Xmx256m -Xms256m"
+  heap: "-Xmx512m -Xms256m"
   memory_limits: 512Mi
   otp-validation: "true"
   citizen-otp-enabled: "true"
@@ -314,7 +314,7 @@ egov-localization:
   
 egov-mdms-service:
   replicas: 2
-  heap:  "-Xmx1000m -Xms1000m -Xmn800m"
+  heap:  "-Xmx512m -Xms512m -Xmn386m"
   memory_limits: "1250Mi"
   mdms-path: "/work-dir/upyog-mdms-data/data"
   initContainers:
@@ -373,7 +373,7 @@ bpa-services:
   images:
     - egovio/bpa-services
   db_migration_image: egovio/bpa-services-db
-  heap: "-Xmx192m -Xms192m"
+  heap: "-Xmx512m -Xms256m"
   memory_limits: 384Mi
   java-args: -Dspring.profiles.active=monitoring
   java-debug: true
@@ -616,7 +616,7 @@ pt-calculator-v2:
   logging-level: "DEBUG"
 
 tl-services:
-  heap: "-Xmx128m -Xms64m"
+  heap: "-Xmx384m -Xms64m"
   memory_limits: 384Mi
   java-args: -Dspring.profiles.active=monitoring
   tl-application-num-format: "PG-TL-[cy:yyyy-MM-dd]-[SEQ_EG_TL_APL]"
@@ -634,12 +634,12 @@ property-services:
 egov-workflow-v2:
   logging-level: "DEBUG"
   java-args: -Dspring.profiles.active=monitoring
-  heap: "-Xmx192m -Xms192m"
+  heap: "-Xmx512m -Xms256m"
   workflow-statelevel: "true"
 
 egov-hrms:
   java-args: -Dspring.profiles.active=monitoring
-  heap: "-Xmx192m -Xms192m"
+  heap: "-Xmx256m -Xms192m"
   employee-applink: "https://upyog.niua.org/employee/user/login"
 
 egov-apportion-service:
@@ -1035,12 +1035,15 @@ minio:
     hostName: minio-nugp-demo.digit.org      
   
 ws-services:
+  heap: "-Xmx512m -Xms386m"
   is-external-workflow-enabled: "true"
 
 sw-services:
+  heap: "-Xmx512m -Xms386m"
   is-external-workflow-enabled: "true" 
   
 egov-edcr:
+heap: "-Xmx756m -Xms386m"
   ingress:
     enabled: true
     zuul: true
