@@ -1038,7 +1038,8 @@ minio:
     hostName: minio-nugp-demo.digit.org      
   
 ws-services:
-  heap: "-Xmx786m -Xms512m"
+  heap: "-Xmx1024m -Xms786m"
+  memory_limits: 1200Mi
   is-external-workflow-enabled: "true"
 
 sw-services:
