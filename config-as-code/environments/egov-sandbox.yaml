@@ -561,6 +561,7 @@ collection-masters:
   db-url: "jdbc:postgresql://postgres.egov:5432/upyog_sandbox_db"
 
 collection-services:
+  heap: "-Xmx704m -Xms512m"
   receiptnumber-servicebased: "true"
   apportion-endpoint: /apportion-service/v2/bill/_apportion
   receipt-search-paginate: "true"
