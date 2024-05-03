@@ -506,7 +506,7 @@ nginx-ingress:
         enabled: true      
 
 cert-manager:
-  email: "nikesh.umredkar@egovernments.org"
+  email: "shivam.upadhyay@egovernments.org"
   images:
     - "quay.io/jetstack/cert-manager-controller:v0.10.1"
   namespace: egov
