@@ -329,6 +329,7 @@ egov-mdms-service:
   masters-config-url: "file:///work-dir/upyog-mdms-data/master-config.json"
 
 mdms-v2:
+  replicas: 2
   heap:  "-Xmx512m -Xms512m"
   memory_limits: "768Mi"
   
@@ -1043,7 +1044,8 @@ ws-services:
   is-external-workflow-enabled: "true"
 
 sw-services:
-  heap: "-Xmx512m -Xms386m"
+  heap: "-Xmx1024m -Xms786m"
+  memory_limits: 1200Mi
   is-external-workflow-enabled: "true" 
   
 egov-edcr:
