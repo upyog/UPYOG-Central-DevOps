@@ -329,6 +329,7 @@ egov-mdms-service:
   masters-config-url: "file:///work-dir/upyog-mdms-data/master-config.json"
 
 mdms-v2:
+  replicas: 2
   heap:  "-Xmx512m -Xms512m"
   memory_limits: "768Mi"
   
@@ -560,6 +561,7 @@ collection-masters:
   db-url: "jdbc:postgresql://postgres.egov:5432/upyog_sandbox_db"
 
 collection-services:
+  heap: "-Xmx704m -Xms512m"
   receiptnumber-servicebased: "true"
   apportion-endpoint: /apportion-service/v2/bill/_apportion
   receipt-search-paginate: "true"
@@ -1043,7 +1045,8 @@ ws-services:
   is-external-workflow-enabled: "true"
 
 sw-services:
-  heap: "-Xmx512m -Xms386m"
+  heap: "-Xmx1024m -Xms786m"
+  memory_limits: 1200Mi
   is-external-workflow-enabled: "true" 
   
 egov-edcr:
