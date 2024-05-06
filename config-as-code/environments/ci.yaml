@@ -26,6 +26,7 @@ jenkins:
         - vinothrallapalli-eGov
       user:
         - egovernments*upyog
+        - abhijniua
 
   master:
     ingress:
