@@ -224,7 +224,7 @@ egov-notification-sms:
 egov-user:
   replicas: 2
   heap: "-Xmx512m -Xms256m"
-  memory_limits: 512Mi
+  memory_limits: 712Mi
   otp-validation: "true"
   citizen-otp-enabled: "true"
   employee-otp-enabled: "false"
@@ -561,7 +561,8 @@ collection-masters:
   db-url: "jdbc:postgresql://postgres.egov:5432/upyog_sandbox_db"
 
 collection-services:
-  heap: "-Xmx704m -Xms512m"
+  heap: "-Xmx786m -Xms512m"
+  memory_limits: 1000Mi
   receiptnumber-servicebased: "true"
   apportion-endpoint: /apportion-service/v2/bill/_apportion
   receipt-search-paginate: "true"
