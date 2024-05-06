@@ -43,7 +43,7 @@ jenkins:
       'git@github.com:egovernments/upyog.git'
   deploymentJobs:
     - name: egov-sandbox
-      acl: [egovernments*upyog]
+      acl: [egovernments*upyog, abhijniua]
     - name: ci
       acl: [vinothrallapalli-eGov, shivam-eGov]
 
