@@ -194,7 +194,11 @@ egov-location:
 noc-services:
   heap: "-Xmx384m -Xms256m"
   memory_limits: 512Mi
-  
+
+land-services:
+  heap: "-Xmx512m -Xms386m"
+  memory_limits: 712Mi
+
 egov-notification-sms:
   sms-provider-url: "https://smsgw.sms.gov.in/failsafe/MLink"
   sms.provider.url: "https://smsgw.sms.gov.in/failsafe/MLink"
