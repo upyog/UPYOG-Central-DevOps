@@ -466,6 +466,7 @@ citizen:
       <script src=https://s3.ap-south-1.amazonaws.com/egov-assets/ulb-overrides.js type=text/javascript></script>
       ';"
 dashboard-analytics:
+  replicas: 2
   config-schema-paths: "file:///work-dir/upyog-configs/configs/egov-dss-dashboards/dashboard-analytics/*.json"  
   initContainers:
     gitSync:
