@@ -364,9 +364,9 @@ egov-persister:
       branch: "2.8_upgrade"
 
 national-dashboard-ingest:
-  heap: "-Xmx950m -Xms850m"
-  memory_limits: 1384Mi
-  replicas: 7
+  heap: "-Xmx750m -Xms750m"
+  memory_limits: 1Gi
+  replicas: 5
   server-tomcat-max-threads: 25
   module-index-mapping: '{"PT": "pt-national-dashboard-temp", "PGR": "pgr-national-dashboard", "WS": "ws-national-dashboard", "FIRENOC": "firenoc-national-dashboard", "TL": "tl-national-dashboard", "MCOLLECT": "mcollect-national-dashboard", "OBPS": "obps-national-dashboard", "COMMON": "common-national-dashboard", "BPA": "bpa-national-dashboard","BIRTH":"birth-cert-national-dashboard","CF":"citizen-feedback-national-dashboard"}'
   master-data-index: "master-national-dashboard"
@@ -376,7 +376,7 @@ national-dashboard-ingest:
   national-dashboard-user: '{"SUPERUUID":"efc090de-a1a2-4cbb-9ed2-dd1fb9196ae7","Punjab":"98800431-8d7f-41a3-b423-daeea90bc60c,7455774b-5a47-4d35-889b-9da698144973,0dab864d-e655-456f-a69c-b5c969e9b754","Karnataka":"98c6d961-5daf-4f53-a532-204229f2b8ad","Rajasthan":"4580803f-52e3-4495-911f-2895b65ed928","Goa":"492a8462-4fe3-460d-8b07-b22de30bc00c","Andhra Pradesh":"4275911e-f085-436b-b3df-735095250f01","Madhya Pradesh":"fd98e215-29fa-42a8-812f-49aefa3c3904","Telangana":"89ed69cf-c1c9-461d-9e3c-8cb04555fc49","Tamil Nadu":"63fce6cb-5af6-4fcb-94fa-2b7f0a796660","Chandigarh":"c499b45b-7d65-418f-b003-5ce5db2220d2","Chhattisgarh":"33dc5944-6bd3-46e2-8e90-db32270c9977","Maharashtra":"49ec839a-35be-4347-b166-12cee02cd885","Uttarakhand":"cb343459-62ba-4fa0-9179-bd58ac635ef2","Jharkhand":"3679e706-9893-48f9-b1d8-3b27946a5bd6","Tripura":"2d934def-d9ee-4f79-a2c6-16eabe0e600a"}'
 
 national-dashboard-kafka-pipeline:
-  replicas: 7
+  replicas: 5
   memory_limits: 756Mi
 
 bpa-services:
