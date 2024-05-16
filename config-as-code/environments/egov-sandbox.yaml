@@ -467,8 +467,8 @@ citizen:
       <script src=https://s3.ap-south-1.amazonaws.com/egov-assets/ulb-overrides.js type=text/javascript></script>
       ';"
 dashboard-analytics:
-  memory_limits: 1Gi
-  heap: "-Xmx512m -Xms512m"
+  heap: "-Xmx1580m -Xms1024m"
+  memory_limits: 2Gi
   replicas: 2
   config-schema-paths: "file:///work-dir/upyog-configs/configs/egov-dss-dashboards/dashboard-analytics/*.json"  
   initContainers:
