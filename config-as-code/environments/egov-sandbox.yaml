@@ -151,7 +151,7 @@ cluster-configs:
         minio-url: "https://minio-uat.digit.org/"
         egov-user-chatbot: "http://egov-user-chatbot:8080/"
         zuul: "http://zuul:8080/"
-        egov-url-shortening: "http://egov-url-shortening:8080/"
+        egov-url-shortening: "http://egov-url-shortening.egov:8080/"
         fsm-calculator: "http://fsm-calculator.egov:8080/"
         fsm: "http://fsm.egov:8080/"
         vehicle: "http://vehicle.egov:8080"
