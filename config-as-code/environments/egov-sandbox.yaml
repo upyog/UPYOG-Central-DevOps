@@ -180,6 +180,7 @@ egov-common-workflows:
 
 egov-filestore:
   replicas: 1
+  heap: "-Xmx512m -Xms386m"
   images:
     - egovio/egov-filestore
   volume: /opt/eGov/filestore
