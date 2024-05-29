@@ -412,7 +412,7 @@ egov-data-uploader:
       branch: "2.8_upgrade"
 
 pdf-service:
-  replicas: 2
+  replicas: 1
   memory_limits: 1.5Gi
   initContainers:
     gitSync:
