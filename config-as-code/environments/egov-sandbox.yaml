@@ -181,6 +181,7 @@ egov-common-workflows:
 egov-filestore:
   replicas: 1
   heap: "-Xmx786m -Xms512m"
+  memory_limits: 986Mi
   images:
     - egovio/egov-filestore
   volume: /opt/eGov/filestore
