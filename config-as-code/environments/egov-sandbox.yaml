@@ -1059,8 +1059,8 @@ ws-services:
   is-external-workflow-enabled: "true"
 
 ws-calculator:
-  heap: "-Xmx512m -Xms386m"
-  memory_limits: 712Mi
+  heap: "-Xmx756m -Xms512m"
+  memory_limits: 956Mi
 
 sw-services:
   heap: "-Xmx1024m -Xms786m"
