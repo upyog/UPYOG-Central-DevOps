@@ -168,9 +168,6 @@ env: |
     value: {{ index .Values "time-before-closing-complaint" | quote }} 
   {{- end }}
   - name: FLYWAY_ENABLED
-        value: "true"      
+    value: "true"      
   - name: SPRING_FLYWAY_ENABLED
-        value: "true"
-
-
-  
+    value: "true"
