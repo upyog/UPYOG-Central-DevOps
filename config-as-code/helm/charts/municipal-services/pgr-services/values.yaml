@@ -167,6 +167,10 @@ env: |
   - name: PGR_COMPLAIN_IDLE_TIME
     value: {{ index .Values "time-before-closing-complaint" | quote }} 
   {{- end }}
+  - name: FLYWAY_ENABLED
+        value: "true"      
+  - name: SPRING_FLYWAY_ENABLED
+        value: "true"
 
 
   
