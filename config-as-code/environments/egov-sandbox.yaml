@@ -30,7 +30,7 @@ cluster-configs:
       data:
         db-host: "postgres.egov"
         db-name: "upyog_sandbox_db"
-        db-url: "jdbc:postgresql://postgres.egov:5432/upyog_sandbox_db"
+        db-url: "jdbc:postgresql://postgres.egov:5432/upyog_sandbox_db?currentSchema=public"
         bpa-db-url: "jdbc:postgresql://postgres.egov:5432/bpa_sandbox_db"
         erp-db-url: "jdbc:postgresql://postgres.egov:5432/finance_sandbox_db"
         domain: "egov-sandbox.niua.org"
