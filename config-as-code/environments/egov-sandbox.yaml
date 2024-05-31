@@ -3,6 +3,8 @@ global:
   containerRegistry: egovsb
   setup: fullsetup
   tracing-enabled: true
+  schema:
+    - public
 
 cluster-configs:
   namespaces:
