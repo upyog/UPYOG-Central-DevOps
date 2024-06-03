@@ -622,7 +622,7 @@ rainmaker-pgr:
   notification-allowed-status: "open,assigned,rejected,resolved"
 
 pgr-services:
-  heap: "-Xmx512m -Xms256m"
+  heap: "-Xmx756m -Xms386m"
   notification-sms-enabled: "true"
   notification-email-enabled: "true"
   new-complaint-enabled: "true"
