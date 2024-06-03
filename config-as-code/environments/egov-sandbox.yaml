@@ -622,7 +622,8 @@ rainmaker-pgr:
   notification-allowed-status: "open,assigned,rejected,resolved"
 
 pgr-services:
-  heap: "-Xmx756m -Xms386m"
+  heap: "-Xmx756m -Xms512m"
+  memory_limits: 956Mi
   notification-sms-enabled: "true"
   notification-email-enabled: "true"
   new-complaint-enabled: "true"
