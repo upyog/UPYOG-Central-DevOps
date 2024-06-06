@@ -38,8 +38,8 @@ cluster-configs:
         state-level-tenantid-length: "2"
         state-schema-index-position-tenantid: "1"
         is-environment-central-instance: "false"
-        es-host: "elasticsearch-data-v1.es-cluster"
-        es-indexer-host: "http://elasticsearch-data-v1.es-cluster:9200/"
+        es-host: "elasticsearch-data-v6.es-cluster"
+        es-indexer-host: "http://elasticsearch-data-v6.es-cluster:9200/"
         flyway-locations: "filesystem:/flyway/sql,filesystem:/flyway/seed,filesystem:/flyway/qa"
         kafka-brokers: "kafka-v2.kafka-cluster:9092"
         kafka-infra-brokers: "kafka-v2-infra.kafka-cluster:9092"
@@ -56,7 +56,7 @@ cluster-configs:
         egov-indexer-yaml-repo-path: "https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/egov-telemetry-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/rainmaker-pgr-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/rainmaker-pt-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/billingservices-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/tradelicense-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/collection-indexer.yml,https://raw.githubusercontent.com/egovernments/playground-rainmaker-customization/master/configs/egov-indexer/egov-uploader-indexer.yml"
         tracer-errors-provideexceptionindetails: "true"
         timezone: "Asia/Kolkata"
-        es-infra-host: "elasticsearch-data-v1.es-cluster"
+        es-infra-host: "elasticsearch-data-v6.es-cluster"
         egov-bnd-freedownload-tenants: "pg.testing"
         egov-bnd-live-citizen-tenants: "pg.testing"
         egov-internal-microservice-user-uuid: "d5b68591-5581-49bb-9433-48f8188de27b"
@@ -103,7 +103,7 @@ cluster-configs:
         egov-data-uploader: "http://egov-data-uploader:8080/"
         egov-indexer: "http://egov-indexer:8080/"
         egov-hrms: "http://egov-hrms:8080/"
-        es-client: "http://elasticsearch-data-v1.es-cluster:9200"
+        es-client: "http://elasticsearch-data-v6.es-cluster:9200"
         hr-masters: "http://hr-masters:8080/"
         hr-employee: "http://hr-employee:8080/"
         hr-masters-v2: "http://hr-masters-v2:8080/"
@@ -852,8 +852,8 @@ zookeeper-v2:
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-# es-v1-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
-elasticsearch-data-v1:
+# es-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+elasticsearch-data:
   replicas: 3
   image:
     tag: 8.11.3
@@ -876,9 +876,9 @@ elasticsearch-data-v1:
       # cpu: "1000m"
       memory: "2Gi"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-elasticsearch-data-infra-v1:
+elasticsearch-data-infra:
   image:
-    tag: 6.6.2
+    tag: 8.11.3
   persistence:
     enabled: true
     aws:
@@ -898,7 +898,7 @@ elasticsearch-data-infra-v1:
       # cpu: "1000m"
       memory: "2Gi"      
 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-elasticsearch-master-v1:
+elasticsearch-master:
   replicas: 3
   image:
     tag: 8.11.3
@@ -919,10 +919,10 @@ elasticsearch-master-v1:
     limits:
       memory: "896Mi"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-elasticsearch-master-infra-v1:
+elasticsearch-master-infra:
   replicas: 3
   image:
-    tag: 6.6.2
+    tag: 8.11.3
   persistence:
     enabled: true
     aws:
@@ -940,10 +940,60 @@ elasticsearch-master-infra-v1:
     limits:
       memory: "896Mi"      
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-kibana-v1:
+kibana:
   image:
     tag: 8.11.3
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+# es-v6-cluster >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+elasticsearch-data-v6:
+  image:
+    tag: 6.6.2
+  persistence:
+    enabled: true
+    aws:
+      - volumeId: "vol-02e3579bd1f37cf4e"
+        zone: ap-south-1b
+      - volumeId: "vol-02c860da2278a53a1"
+        zone: ap-south-1b
+      - volumeId: "vol-0bb6ac08d1a6e2fb0"
+        zone: ap-south-1b
+
+  esJavaOpts: "-Xmx1g -Xms1g"
+  resources:
+    requests:
+      # cpu: "1000m"
+      memory: "2Gi"
+    limits:
+      # cpu: "1000m"
+      memory: "2Gi"
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+elasticsearch-master-v6:
+  replicas: 3
+  image:
+    tag: 6.6.2
+  persistence:
+    enabled: true
+    aws:
+      - volumeId: "vol-00c3a4e13cdc41fdc"
+        zone: ap-south-1b
+      - volumeId: "vol-0ddd7c30668199b99"
+        zone: ap-south-1b
+      - volumeId: "vol-006a78f8d83f58319"
+        zone: ap-south-1b
+
+  esJavaOpts: "-Xmx448m -Xms448m"
+  resources:
+    requests:
+      memory: "896Mi"
+    limits:
+      memory: "896Mi"
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+kibana-v6:
+  image:
+    tag: 6.6.2
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 es-curator-infra:
   namespace: es-cluster
   schedule: "45 18 * * *"

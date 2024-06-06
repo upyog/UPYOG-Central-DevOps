@@ -1,12 +1,12 @@
 # Common Labels
 labels:
-  app: "kibana-infra-v1"
-namespace: es-cluster-infra  
+  app: "kibana-v1"
+namespace: es-cluster  
 
 # Ingress Configs
 ingress:
   enabled: true
-  context: "kibana-infra"
+  context: "kibana"
   additionalAnnotations: |
     nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
     nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
@@ -20,13 +20,13 @@ image:
   tag: 6.6.2
 replicas: "1"
 httpPort: 5601
-elasticsearchHosts: "http://elasticsearch-data-infra-v1.es-cluster-infra:9200"
-serverBasePath: "/logging"
-healthCheckPath: "logging/app/kibana"
+elasticsearchHosts: "http://elasticsearch-data-v1.es-cluster:9200"
+serverBasePath: "/kibana-v6"
+healthCheckPath: "kibana-v6/app/kibana"
 healthChecks:
   enabled: true
-  livenessProbePath: "/logging/"
-  readinessProbePath: "/logging/"            
+  livenessProbePath: "/kibana-v6/"
+  readinessProbePath: "/kibana-v6/"
 
 # Additional Container Envs
 env: |
