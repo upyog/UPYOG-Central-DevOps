@@ -138,3 +138,7 @@ cluster-configs:
     postgres:
       namespace: jenkins
       name: postgres
+
+    elasticsearch:
+      namespace: [ es-cluster, egov ]
+      name: elasticsearch-credential

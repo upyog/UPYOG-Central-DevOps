@@ -6,7 +6,7 @@ namespace: es-cluster
 # Ingress Configs
 ingress:
   enabled: true
-  context: "kibana"
+  context: "kibana-v6"
   additionalAnnotations: |
     nginx.ingress.kubernetes.io/auth-signin:  https://$host/oauth2/start?rd=$escaped_request_uri
     nginx.ingress.kubernetes.io/auth-url:     https://$host/oauth2/auth 
