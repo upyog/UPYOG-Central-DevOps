@@ -1009,6 +1009,15 @@ postgres:
   args: |
     - "-c"
     - "max_connections=2000"
+  persistence:
+    enabled: true
+    storageClass: gp2
+    accessMode: "ReadWriteOnce"
+    size: "20Gi"
+    aws:
+      - volumeId: "vol-087d7c51e5280969a"
+        zone: ap-south-1b
+
 
 #logging >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 fluentd:
