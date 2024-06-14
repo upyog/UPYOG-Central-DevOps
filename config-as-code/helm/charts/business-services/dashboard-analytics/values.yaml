@@ -84,10 +84,10 @@ env: |
   - name: SERVICES_ESINDEXER_USERNAME
     valueFrom:
       secretKeyRef:
-        name: username
-        key: elasticsearch-credential
+        name: elasticsearch-credential
+        key: username
   - name: SERVICES_ESINDEXER_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: password
-        key: elasticsearch-credential
+        name: elasticsearch-credential
+        key: password
