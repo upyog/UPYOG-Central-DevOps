@@ -81,3 +81,13 @@ env: |
     value: {{ index .Values "heap" | quote }}
   - name: JAVA_ARGS
     value: {{ index .Values "java-args" | quote }}
+  - name: SERVICES_ESINDEXER_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: username
+        key: elasticsearch-credential
+  - name: SERVICES_ESINDEXER_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: password
+        key: elasticsearch-credential
