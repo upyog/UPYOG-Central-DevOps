@@ -335,7 +335,7 @@ egov-mdms-service:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-mdms-data"
-      branch: "2.8_upgrade"
+      branch: "master"
   mdms-folder: "upyog-mdms-data"
   java-args: -Dspring.profiles.active=monitoring
   masters-config-url: "file:///work-dir/upyog-mdms-data/master-config.json"
@@ -351,7 +351,7 @@ egov-indexer:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-configs"
-      branch: "2.8_upgrade"
+      branch: "master"
   egov-indexer-yaml-repo-path: "file:///work-dir/upyog-configs/configs/egov-indexer/privacy-audit.yaml,file:///work-dir/upyog-configs/configs/egov-indexer/billingservices-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/collection-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-telemetry-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-uploader-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/error-queue.yml,file:///work-dir/upyog-configs/configs/egov-indexer/finance-rolloutadotpion-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/payment-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/pgr-services.yml,file:///work-dir/upyog-configs/configs/egov-indexer/rainmaker-pgr-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/rainmaker-pt-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/rainmaker-tl-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/chatbot-telemetry.yaml,file:///work-dir/upyog-configs/configs/egov-indexer/water-service.yml,file:///work-dir/upyog-configs/configs/egov-indexer/water-services-meter.yml,file:///work-dir/upyog-configs/configs/egov-indexer/sewerage-service.yml,file:///work-dir/upyog-configs/configs/egov-indexer/property-services.yml,file:///work-dir/upyog-configs/configs/egov-indexer/chatbot-telemetry-v2.yaml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-vehicle.yaml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-vendor.yaml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-url-shortening-indexer.yaml,file:///work-dir/upyog-configs/configs/egov-indexer/fire-noc-service.yml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-echallan.yml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-bpa-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/edcr-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/rainmaker-birth-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/rainmaker-death-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/citizen-feedback-indexer.yml,file:///work-dir/upyog-configs/configs/egov-indexer/egov-fsm.yml"
 
 egov-pg-service:
@@ -369,7 +369,7 @@ egov-persister:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-configs"
-      branch: "2.8_upgrade"
+      branch: "master"
 
 national-dashboard-ingest:
   heap: "-Xmx750m -Xms750m"
@@ -422,7 +422,7 @@ pdf-service:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-configs"
-      branch: "2.8_upgrade"
+      branch: "master"
   data-config-urls: "file:///work-dir/upyog-configs/configs/pdf-service/data-config/tradelicense-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/property-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/property-bill.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/tradelicense-bill.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/firenoc-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/pt-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/tl-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/consolidatedbill.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/consolidatedreceipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/tlapplication.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/tlcertificate.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-consolidatedacknowlegment.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-consolidatedsewerageconnection.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/buildingpermit.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ptmutationcertificate.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/tlrenewalcertificate.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/bpa-revocation.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/buildingpermit-low.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/misc-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-applicationwater.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-sanctionletter.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-estimationnotice.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-applicationsewerage.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-bill.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/ws-onetime-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/occupancy-certificate.json, file:///work-dir/upyog-configs/configs/pdf-service/data-config/bill-amendment-note.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/sewerage-bill-amendment-note.json, file:///work-dir/upyog-configs/configs/pdf-service/data-config/fsm-receipt.json, file:///work-dir/upyog-configs/configs/pdf-service/data-config/bill-amendment.json, file:///work-dir/upyog-configs/configs/pdf-service/data-config/mcollect-bill.json, file:///work-dir/upyog-configs/configs/pdf-service/data-config/mcollect-challan.json,file:///work-dir/upyog-configs/configs/pdf-service/data-config/birth-certificate-pdf.json, file:///work-dir/upyog-configs/configs/pdf-service/data-config/death-certificate.json, file:///work-dir/upyog-configs/configs/pdf-service/data-config/bpa-receipt.json"
   format-config-urls: "file:///work-dir/upyog-configs/configs/pdf-service/format-config/tradelicense-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/property-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/property-bill.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/tradelicense-bill.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/firenoc-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/pt-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/tl-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/consolidatedbill.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/consolidatedreceipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/tlapplication.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/tlcertificate.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-consolidatedacknowlegment.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-consolidatedsewerageconnection.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/buildingpermit.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ptmutationcertificate.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/tlrenewalcertificate.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/bpa-revocation.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/buildingpermit-low.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/misc-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-applicationwater.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-sanctionletter.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-estimationnotice.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-applicationsewerage.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-bill.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/ws-onetime-receipt.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/occupancy-certificate.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/bill-amendment-note.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/sewerage-bill-amendment-note.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/fsm-receipt.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/bill-amendment.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/mcollect-bill.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/mcollect-challan.json,file:///work-dir/upyog-configs/configs/pdf-service/format-config/birth-certificate.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/death-certificate.json, file:///work-dir/upyog-configs/configs/pdf-service/format-config/bpa-receipt.json"
 
@@ -431,7 +431,7 @@ egov-searcher:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-configs"
-      branch: "2.8_upgrade"
+      branch: "master"
 
 
 # web >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -482,7 +482,7 @@ dashboard-analytics:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-configs"
-      branch: "2.8_upgrade"
+      branch: "master"
 
 dashboard-ingest:
   topic-incoming-collection: "dss-collection-update"
@@ -492,7 +492,7 @@ dashboard-ingest:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-configs"
-      branch: "2.8_upgrade"
+      branch: "master"
 
 dashboard:
   custom-js-injection: |
@@ -608,7 +608,7 @@ report:
   initContainers:
     gitSync:
       repo: "git@github.com:egovernments/upyog-configs"
-      branch: "2.8_upgrade"
+      branch: "master"
   report-locationsfile-path: "file:///work-dir/upyog-configs/configs/reports/reportFileLocationsv1.txt"
   spring-datasource-tomcat-max-active: 5
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
